@@ -31,5 +31,22 @@ Calculator::~Calculator()
 
 void Calculator::NumPressed()
 {
+    QPushButton *button = (QPushButton *)sender();
+    QString butVal = button->text();
+    QString displayVal = ui->Display->text();
+    if ((displayVal.toDouble() == 0) || (displayVal.toDouble() == 0.0))
+    {
+        ui->Display->setText(butVal);
+    }
+    else
+    {
+        QString newVal = displayVal + butVal;
+        double dblNewVal = newVal.toDouble();
+        ui->Display->setText(QString::number(dblNewVal, 'g', 16));
+    }
+}
+
+void Calculator::MathButtonPressed()
+{
 
 }
