@@ -30,6 +30,7 @@ Calculator::Calculator(QWidget *parent)
     connect(ui->ChangeSign, SIGNAL(released()), this, SLOT(ChangeNumberSign()));
     connect(ui->Clear, SIGNAL(released()), this, SLOT(ClearButton()));
     connect(ui->ClearAll, SIGNAL(released()), this, SLOT(ClearAllButton()));
+    connect(ui->Point, SIGNAL(released()), this, SLOT(PointButton()));
 
 }
 
@@ -139,4 +140,10 @@ void Calculator::ClearAllButton()
     addTrigger = false;
     subTrigger = false;
     ui->Display->setText(QString::number(calval));
+}
+
+void Calculator::PointButton()
+{
+    QString displayVal = ui->Display->text();
+    ui->Display->setText(displayVal+".");
 }
