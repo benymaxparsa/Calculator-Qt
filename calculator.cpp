@@ -31,6 +31,7 @@ Calculator::Calculator(QWidget *parent)
     connect(ui->Clear, SIGNAL(released()), this, SLOT(ClearButton()));
     connect(ui->ClearAll, SIGNAL(released()), this, SLOT(ClearAllButton()));
     connect(ui->Point, SIGNAL(released()), this, SLOT(PointButton()));
+    connect(ui->Delete, SIGNAL(released()), this, SLOT(DeleteButton()));
 
 
 }
@@ -147,4 +148,11 @@ void Calculator::PointButton()
 {
     QString displayVal = ui->Display->text();
     ui->Display->setText(displayVal+".");
+}
+
+void Calculator::DeleteButton()
+{
+    QString displayVal = ui->Display->text();
+    displayVal.chop(1);
+    ui->Display->setText(displayVal);
 }

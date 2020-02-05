@@ -26,6 +26,7 @@ private slots:
     void ClearButton();
     void ClearAllButton();
     void PointButton();
+    void DeleteButton();
 
 };
 #endif // CALCULATOR_H
