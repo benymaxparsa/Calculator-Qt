@@ -32,6 +32,7 @@ Calculator::Calculator(QWidget *parent)
     connect(ui->ClearAll, SIGNAL(released()), this, SLOT(ClearAllButton()));
     connect(ui->Point, SIGNAL(released()), this, SLOT(PointButton()));
 
+
 }
 
 Calculator::~Calculator()
@@ -44,7 +45,7 @@ void Calculator::NumPressed()
     QPushButton *button = (QPushButton *)sender();
     QString butVal = button->text();
     QString displayVal = ui->Display->text();
-    if ((displayVal.toDouble() == 0) || (displayVal.toDouble() == 0.0))
+    if (((displayVal.toDouble() == 0)|| (displayVal.toDouble() == 0.0)) && !displayVal.contains("." , Qt::CaseInsensitive))
     {
         ui->Display->setText(butVal);
     }
