@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>775</width>
+    <width>843</width>
     <height>600</height>
    </rect>
   </property>
@@ -43,7 +43,7 @@
      <number>9</number>
     </property>
     <property name="spacing">
-     <number>0</number>
+     <number>2</number>
     </property>
     <item row="1" column="4">
      <widget class="QPushButton" name="MemStore">
@@ -638,7 +638,7 @@ QPushButton:pressed  {
        </font>
       </property>
       <property name="text">
-       <string>The Calculator                                                                                                        made by Parsa KamaliPour (benymaxparsa)</string>
+       <string>The Calculator                                                                                                                         made by Parsa KamaliPour (benymaxparsa)</string>
       </property>
      </widget>
     </item>
@@ -958,7 +958,7 @@ QPushButton:pressed  {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>775</width>
+     <width>843</width>
      <height>25</height>
     </rect>
    </property>

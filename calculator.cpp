@@ -28,6 +28,8 @@ Calculator::Calculator(QWidget *parent)
     connect(ui->Divide, SIGNAL(released()), this, SLOT(MathButtonPressed()));
     connect(ui->Equals, SIGNAL(released()), this, SLOT(EqualButton()));
     connect(ui->ChangeSign, SIGNAL(released()), this, SLOT(ChangeNumberSign()));
+    connect(ui->Clear, SIGNAL(released()), this, SLOT(ClearButton()));
+    connect(ui->ClearAll, SIGNAL(released()), this, SLOT(ClearAllButton()));
 
 }
 
@@ -122,4 +124,19 @@ void Calculator::ChangeNumberSign()
         ui->Display->setText(QString::number(dblDisplayValSign));
     }
 
+}
+
+void Calculator::ClearButton()
+{
+    ui->Display->setText("");
+}
+
+void Calculator::ClearAllButton()
+{
+    calval = 0.0;
+    divTrigger = false;
+    multTrigger = false;
+    addTrigger = false;
+    subTrigger = false;
+    ui->Display->setText(QString::number(calval));
 }
