@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::Calculator *ui;
+    void KeyPressedEvent(QKeyEvent* event);
 
 private slots:
     void NumPressed();
@@ -27,6 +28,11 @@ private slots:
     void ClearAllButton();
     void PointButton();
     void DeleteButton();
+    void MemoryClear();
+    void MemoryStore();
+    void MemoryAdd();
+    void MemorySub();
+    void MemoryGet();
 
 };
 #endif // CALCULATOR_H

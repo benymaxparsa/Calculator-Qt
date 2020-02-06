@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>843</width>
+    <width>914</width>
     <height>600</height>
    </rect>
   </property>
@@ -638,7 +638,7 @@ QPushButton:pressed  {
        </font>
       </property>
       <property name="text">
-       <string>The Calculator                                                                                                                         made by Parsa KamaliPour (benymaxparsa)</string>
+       <string>The Calculator  V1.10                                                                                                                                 made by Parsa KamaliPour (benymaxparsa)</string>
       </property>
      </widget>
     </item>
@@ -745,7 +745,7 @@ QPushButton:pressed  {
      </widget>
     </item>
     <item row="5" column="4">
-     <widget class="QPushButton" name="MemClear_2">
+     <widget class="QPushButton" name="MemClear">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -958,7 +958,7 @@ QPushButton:pressed  {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>843</width>
+     <width>914</width>
      <height>25</height>
     </rect>
    </property>

@@ -1,11 +1,13 @@
 #include "calculator.h"
 #include "ui_calculator.h"
+#include <QKeyEvent>
 
 double calval = 0.0;
 bool divTrigger = false;
 bool multTrigger = false;
 bool addTrigger = false;
 bool subTrigger = false;
+double memory = 0.0;
 
 Calculator::Calculator(QWidget *parent)
     : QMainWindow(parent)
@@ -32,6 +34,11 @@ Calculator::Calculator(QWidget *parent)
     connect(ui->ClearAll, SIGNAL(released()), this, SLOT(ClearAllButton()));
     connect(ui->Point, SIGNAL(released()), this, SLOT(PointButton()));
     connect(ui->Delete, SIGNAL(released()), this, SLOT(DeleteButton()));
+    connect(ui->MemClear, SIGNAL(released()), this, SLOT(MemoryClear()));
+    connect(ui->MemAdd, SIGNAL(released()), this, SLOT(MemoryAdd()));
+    connect(ui->MemGet, SIGNAL(released()), this, SLOT(MemoryGet()));
+    connect(ui->MemSub, SIGNAL(released()), this, SLOT(MemorySub()));
+    connect(ui->MemStore, SIGNAL(released()), this, SLOT(MemoryStore()));
 
 
 }
@@ -39,6 +46,10 @@ Calculator::Calculator(QWidget *parent)
 Calculator::~Calculator()
 {
     delete ui;
+}
+
+void Calculator::KeyPressedEvent(QKeyEvent* event)
+{
 }
 
 void Calculator::NumPressed()
@@ -155,4 +166,29 @@ void Calculator::DeleteButton()
     QString displayVal = ui->Display->text();
     displayVal.chop(1);
     ui->Display->setText(displayVal);
+}
+
+void Calculator::MemoryClear()
+{
+    memory = 0.0;
+}
+
+void Calculator::MemoryStore()
+{
+    QString displayVal = ui->Display->text();
+    memory = displayVal.toDouble();
+}
+void Calculator::MemoryAdd()
+{
+    QString displayVal = ui->Display->text();
+    memory = memory + displayVal.toDouble();
+}
+void Calculator::MemorySub()
+{
+    QString displayVal = ui->Display->text();
+    memory = memory - displayVal.toDouble();
+}
+void Calculator::MemoryGet()
+{
+    ui->Display->setText(QString::number(memory));
 }
